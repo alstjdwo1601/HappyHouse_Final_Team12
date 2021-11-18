@@ -1,0 +1,18 @@
+CREATE TABLE `qna_board` (
+  `num` int NOT NULL AUTO_INCREMENT,
+  `id` varchar(16) NOT NULL,
+  `pw` varchar(16) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `content` varchar(2000) NOT NULL,
+  `regtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`num`),
+  FOREIGN KEY (`id`) REFERENCES `member` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+insert into qna_board
+values ('1', 'ssafy', 'ssafy', '질문입니다', '부동산 가격 질문 드립니다.', now());
+
+insert into qna_board
+values ('2', 'ssafy2', 'ssafy2', '질문입니다2', '부동산 가격 질문 드립니다.2', now());
+
+*이름 부분은 member db에 등록된 이름으로 사용해야 등록됩니다.
